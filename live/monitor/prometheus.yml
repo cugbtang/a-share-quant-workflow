@@ -1,0 +1,13 @@
+# Prometheus 抓取配置：监控量化策略服务的健康与绩效指标。
+# 策略服务需通过 /metrics 暴露下列指标（见 README 的指标清单）。
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: quant-strategy
+    static_configs:
+      - targets: ['strategy:8000']   # 你的策略服务（暴露 /metrics）
+  - job_name: node
+    static_configs:
+      - targets: ['node-exporter:9100']  # 机器资源（CPU/内存/磁盘）

@@ -1,0 +1,41 @@
+{
+  "title": "A股量化实盘监控",
+  "uid": "a-share-quant-live",
+  "schemaVersion": 39,
+  "version": 1,
+  "time": { "from": "now-24h", "to": "now" },
+  "panels": [
+    {
+      "id": 1,
+      "title": "策略净值(累计收益%)",
+      "type": "timeseries",
+      "datasource": "Prometheus",
+      "targets": [{ "expr": "strategy_equity_return_pct", "refId": "A" }],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 }
+    },
+    {
+      "id": 2,
+      "title": "信号触发延迟(ms)",
+      "type": "timeseries",
+      "datasource": "Prometheus",
+      "targets": [{ "expr": "signal_latency_ms", "refId": "A" }],
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 }
+    },
+    {
+      "id": 3,
+      "title": "下单失败次数(累计)",
+      "type": "stat",
+      "datasource": "Prometheus",
+      "targets": [{ "expr": "sum(order_fail_total)", "refId": "A" }],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 }
+    },
+    {
+      "id": 4,
+      "title": "行情心跳(秒)",
+      "type": "stat",
+      "datasource": "Prometheus",
+      "targets": [{ "expr": "marketdata_freshness_seconds", "refId": "A" }],
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 }
+    }
+  ]
+}
