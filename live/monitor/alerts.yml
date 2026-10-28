@@ -1,0 +1,35 @@
+# Prometheus 告警规则：量化实盘最该盯的 4 件事。
+groups:
+  - name: quant-alerts
+    rules:
+      - alert: 行情心跳中断
+        expr: marketdata_freshness_seconds > 60
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: "行情数据超过 60 秒未更新"
+          description: "marketdata_freshness_seconds = {{ $value }}，可能行情源断开。"
+
+      - alert: 信号触发延迟过高
+        expr: signal_latency_ms > 500
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: "信号计算延迟 > 500ms"
+          description: "signal_latency_ms = {{ $value }}"
+
+      - alert: 下单连续失败
+        expr: increase(order_fail_total[10m]) > 3
+        for: 0m
+        labels: { severity: critical }
+        annotations:
+          summary: "近 10 分钟下单失败 > 3 次"
+          description: "order_fail_total 增量 = {{ $value }}"
+
+      - alert: 实盘回撤超阈
+        expr: strategy_equity_return_pct < -8
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: "累计收益跌破 -8%，触发回撤告警"
+          description: "strategy_equity_return_pct = {{ $value }}%"
