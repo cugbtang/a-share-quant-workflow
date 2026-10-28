@@ -1,0 +1,9 @@
+# 根依赖：数据基建 + 回测共用
+pandas>=2.0
+numpy>=1.24
+duckdb>=0.10
+akshare>=1.12
+pyarrow>=14.0
+
+# 测试
+pytest>=7.0

@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Data / DB
+*.db
+*.duckdb
+data/exports/
+*.parquet
+
+# Secrets / env
+.env
+*.secret
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Local backtest outputs (keep scripts, ignore generated artifacts)
+backtest/output/
+**/_equity.csv
+**/_trades.csv
+**/_summary.json
+**/index.html
