@@ -1,0 +1,44 @@
+# 一键部署：演示容器 + 监控栈（Prometheus / Grafana / node-exporter）。
+# 启动全部：  docker compose up
+# 只跑演示：  docker compose up app
+# 只跑监控：  docker compose up prometheus grafana node-exporter
+#
+# 真实数据扩展：先 export WESTOCK_BIN="node /abs/path/westock-data/scripts/index.js"
+# 再 docker compose up app —— 演示会自动追加降息事件研究。
+services:
+  app:
+    build: .
+    image: a-share-quant-workflow:latest
+    container_name: quant-app
+    environment:
+      - WESTOCK_BIN=${WESTOCK_BIN:-}
+    volumes:
+      - ./output:/app/output
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: quant-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./live/monitor/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./live/monitor/alerts.yml:/etc/prometheus/alerts.yml:ro
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --rules.alert.file=/etc/prometheus/alerts.yml
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: quant-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./live/monitor/grafana_dashboard.json:/var/lib/grafana/dashboards/quant_live.json:ro
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: quant-node-exporter
+    ports:
+      - "9100:9100"
