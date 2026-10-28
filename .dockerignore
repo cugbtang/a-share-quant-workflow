@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.duckdb
+output/
+backtest/output/
+.git/
+.gitignore
+Dockerfile
+docker-compose.yml

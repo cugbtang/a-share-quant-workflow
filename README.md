@@ -12,6 +12,32 @@
 | `feature/first-backtest` | `backtest/` | 通用事件/规则回测引擎 + 降息事件示例 + 低波选股示例 |
 | `feature/platform-compare` | `docs/` | 聚宽/米筐/优矿/qlib/backtrader/vectorbt 对比与选型 |
 | `feature/live-skeleton` | `live/` | 迅投 QMT 下单骨架 + Prometheus/Grafana 监控 |
+| `feature/deploy` | `scripts/` + `Dockerfile` + `docker-compose.yml` | 一键部署：本地 venv / Docker / Makefile / 监控栈 |
+
+---
+
+## 快速开始 / 一键部署
+
+本仓库提供三种「一键跑通 demo」的方式，前两步**离线即可运行**（数据 demo + 低波回测用合成数据，无需网络）：
+
+```bash
+# 方式一：本地虚拟环境（推荐首次体验）
+make demo
+# 等价于：bash run_demo.sh   （Windows: pwsh run_demo.ps1）
+
+# 方式二：Docker 一键
+docker compose up app                 # 仅演示容器
+docker compose up                     # 演示 + Prometheus/Grafana/node-exporter 监控栈
+
+# 方式三：直接调用编排脚本
+python scripts/run_demo.py
+```
+
+- 演示内容：`data.cli demo`（DuckDB 落库自测）+ `backtest.strategy_lowvol`（合成低波选股回测）。
+- 真实数据扩展：设置 `WESTOCK_BIN="node /path/westock-data/scripts/index.js"` 后重跑，会自动追加「降息事件研究」（需联网 + 该 Node 工具）。
+- 监控：Grafana http://localhost:3000 （admin/admin）、Prometheus http://localhost:9090 。
+
+> 详见 `scripts/README.md` 与 `live/README.md`。
 
 ---
 
@@ -97,6 +123,11 @@ flowchart LR
 a-share-quant-workflow/
 ├── README.md                 # 本文件（流程总纲）
 ├── requirements.txt          # 根依赖
+├── scripts/                  # [PR5] 一键演示编排（run_demo.py + 本地启动脚本）
+├── Dockerfile                # [PR5] 演示镜像
+├── docker-compose.yml        # [PR5] 演示 + 监控栈一键编排
+├── Makefile                  # [PR5] make demo / test / docker-* / monitor
+├── .dockerignore
 ├── data/                     # [PR1] 数据基建
 ├── backtest/                 # [PR2] 回测引擎与示例
 ├── docs/                     # [PR3] 平台对比
