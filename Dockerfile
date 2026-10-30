@@ -7,9 +7,9 @@ ENV PYTHONUNBUFFERED=1 \
 
 WORKDIR /app
 
-# 先装依赖，利用层缓存
+# 先装依赖，利用层缓存（仅核心依赖，不含 akshare，构建更快更稳）
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # 复制源码
 COPY . .

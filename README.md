@@ -35,6 +35,7 @@ python scripts/run_demo.py
 
 - 演示内容：`data.cli demo`（DuckDB 落库自测）+ `backtest.strategy_lowvol`（合成低波选股回测）。
 - 真实数据扩展：设置 `WESTOCK_BIN="node /path/westock-data/scripts/index.js"` 后重跑，会自动追加「降息事件研究」（需联网 + 该 Node 工具）。
+- 拉取真实 A 股日线（`python -m data.cli fetch`）需要 AkShare：先 `pip install -r requirements-full.txt`（Docker 镜像默认只装核心依赖，不含 akshare，构建更快更稳）。
 - 监控：Grafana http://localhost:3000 （admin/admin）、Prometheus http://localhost:9090 。
 
 > 详见 `scripts/README.md` 与 `live/README.md`。

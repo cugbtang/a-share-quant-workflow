@@ -1,8 +1,8 @@
-# 根依赖：数据基建 + 回测共用
+# 核心依赖：数据基建 + 回测共用（离线 demo / 测试所需最小集）。
+# Docker 镜像默认只装这份，构建快、无 akshare 编译风险。
 pandas>=2.0
 numpy>=1.24
 duckdb>=0.10
-akshare>=1.12
 pyarrow>=14.0
 
 # 测试
