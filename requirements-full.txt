@@ -1,0 +1,5 @@
+# 完整依赖：在核心依赖之上叠加真实行情拉取所需的 AkShare。
+# 仅当你要用 `python -m data.cli fetch`（拉真实 A 股日线）时才需要。
+# 安装：pip install -r requirements-full.txt
+-r requirements.txt
+akshare>=1.12
