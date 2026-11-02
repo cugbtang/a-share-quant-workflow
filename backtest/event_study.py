@@ -2,18 +2,32 @@
 
 事件定义（政策利率 7天逆回购 / MLF 下调，或 LPR 单独下调；降准不计入；
 同一轮逆回购/MLF/LPR 连续下调合并为一次，以政策利率公告日为锚点）：
+
+数据管道（完整链路，优先走 data/ 层）：
+  1. 优先从 data/store（DuckDB 本地库）读取已落库的日线；
+  2. 本地无数据则通过 data/fetch（AkShare）拉取并 upsert 落库；
+  3. 仍失败（无 AkShare / 无网络）则回退 engine.fetch_kline（westock-data）。
+这样事件研究与数据基建（data/）共用同一份落地数据，避免重复拉取与口径分歧。
 """
 from __future__ import annotations
 
 import csv
 import json
 import os
+import sys
 from datetime import datetime
 
+# 允许以脚本方式直接运行：把仓库根加入 path，使 `data` 可被 import
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from data import fetch as data_fetch, store as data_store
 from . import engine
 
 ETF_CODE = "sh510300"
+DB_PATH = os.environ.get("QUANT_DB", "quant.duckdb")
 HOLD_DAYS = 20
+# 拉取区间起点：覆盖最早事件前约 60 个交易日，保证事件后有足够样本
+FETCH_START = "2021-11-01"
 
 EVENTS = [
     ("2022-01-17", "政策利率(逆回购/MLF)下调", "policy"),
@@ -28,10 +42,43 @@ EVENTS = [
 ]
 
 
+def _load_kline() -> "pd.DataFrame":
+    """完整数据管道：DuckDB 优先 -> AkShare 拉取落库 -> westock 回退。
+
+    返回列：date, open, high, low, close, volume, amount（外加 code/adj_close）。
+    """
+    # 1) 本地 DuckDB 优先
+    try:
+        con = data_store.connect(DB_PATH)
+        df = data_store.query_daily(con, ETF_CODE)
+        if not df.empty:
+            print(f"[event_study] 命中本地库 {DB_PATH}: {len(df)} 行")
+            con.close()
+            return df
+        # 2) 本地为空，尝试 AkShare 拉取并落库
+        print(f"[event_study] 本地库无 {ETF_CODE}，尝试 AkShare 拉取 ...")
+        end = datetime.today().strftime("%Y-%m-%d")
+        # 注：510300 为 ETF，AkShare 实际可用 fund_etf_hist_em；
+        # 此处复用 data.fetch 的通用日线接口，若返回为空会在下方回退。
+        fresh = data_fetch.fetch_daily(ETF_CODE, FETCH_START, end)
+        if fresh is not None and not fresh.empty:
+            data_store.upsert_daily(con, fresh)
+            print(f"[event_study] 已落库 {len(fresh)} 行 -> {DB_PATH}")
+            con.close()
+            return fresh
+        con.close()
+    except Exception as e:  # 缺 akshare / DuckDB / 网络异常等
+        print(f"[event_study] 数据层不可用（{e}），回退 westock-data")
+
+    # 3) 回退：westock-data（需要 Node 环境与本机行情源）
+    return engine.fetch_kline(ETF_CODE, limit=2200)
+
+
 def run(out_dir: str = ".") -> dict:
     os.makedirs(out_dir, exist_ok=True)
-    print(f"[event_study] 拉取 {ETF_CODE} 日线 ...")
-    df = engine.fetch_kline(ETF_CODE, limit=2200)
+    df = _load_kline()
+    if df.empty:
+        raise RuntimeError("无法获取行情数据（数据层与 westock 回退均失败）")
     print(f"[event_study] 共 {len(df)} 个交易日 ({df['date'].iloc[0]} ~ {df['date'].iloc[-1]})")
 
     trades = []
