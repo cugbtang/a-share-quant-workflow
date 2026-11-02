@@ -1,1 +1,116 @@
-IiIi56S65L6L562W55Wl77ya5pyI5bqm5L2O5rOi6YCJ6IKh77yI5ZCI5oiQ5pWw5o2u5Y+v6LeR54mI77yJ44CCCgrnlKjlkIjmiJDku7fmoLzluo/liJfmvJTnpLoi5L2O5rOi5Yqo5Zug5a2QIuWbnua1i+ahhuaetu+8jOaXoOmcgOe9kee7nO+8mgotIOeUn+aIkCBOIOWPquiCoeelqOOAgVQg5aSp55qE5Lu35qC877yI6YOo5YiG6IKh56Wo5Lq65Li65L2O5rOi5Yqo77yJ77yM55SoIHBjdF9jaGFuZ2Ug6L+Y5Y6f5pel5pS255uK44CCCi0g5q+P5pyI5pyr5oyJ6L+H5Y67IDEg5Liq5pyI5rOi5Yqo546H5o6S5bqP77yM6YCJ5pyA5L2O55qEIEsg5Y+q562J5p2D5oyB5pyJ6Iez5LiL5pyI5pyr44CCCi0g6L6T5Ye6IGVxdWl0eS5jc3Yg5LiOIHN1bW1hcnkuanNvbu+8jOWQq+W5tOWMluOAgeWkj+aZruOAgeacgOWkp+WbnuaSpOetiee7hOWQiOaMh+agh+OAggoK55yf5a6e5o6l5YWl77ya5oqKIGBnZW5lcmF0ZV9zeW50aGV0aWNgIOaNouaIkOS7jiBkYXRhLnN0b3JlIOivu+WPluecn+WunuaXpee6v++8jArnlKggYGFkal9jbG9zZWAg6K6h566X5pS255uK546H5Y2z5Y+v5aSN55So5ZCM5LiA5aWX57uE5ZCI6YC76L6R44CCCiIiIgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgY3N2CmltcG9ydCBqc29uCmltcG9ydCBvcwpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRldGltZSwgdGltZWRlbHRhCgppbXBvcnQgbnVtcHkgYXMgbnAKaW1wb3J0IHBhbmRhcyBhcyBwZAoKCmRlZiBnZW5lcmF0ZV9zeW50aGV0aWMobl9zdG9ja3M6IGludCA9IDUwLCBuX2RheXM6IGludCA9IDc1Niwgc2VlZDogaW50ID0gNDIpIC0+IHBkLkRhdGFGcmFtZToKICAgICIiIueUn+aIkOWQiOaIkOS7t+agvOW6j+WIl++8iOi1t+eCuSAxMDDvvInjgIIKCiAgICDmr4/lj6rogqHnpajml6XmlLbnm4ogPSDluILlnLrmlLbnm4oqYmV0YSArIOS4quiCoeato+aAgeWZquWjsO+8jOS7t+agvOaMieaXpeaUtuebiuWkjeWIqeW+l+WIsOOAggogICAg6L+Z5qC35LiL5ri45Y+v55SoIGBwY3RfY2hhbmdlKClgIOi/mOWOn+aXpeaUtuebiu+8jOS4jiBkYXRhLnN0b3JlIOWtmCBhZGpfY2xvc2Ug55qE5Y+j5b6E5LiA6Ie0CiAgICDvvIjkuYvliY3niYjmnKznm7TmjqXnlJ/miJAi5pS255uKIuWNtOWPiOWvueWFtuWGjSBwY3RfY2hhbmdl77yM5a+86Ie05oyH5qCH5aSx55yf77yJ44CCCiAgICAiIiIKICAgIHJuZyA9IG5wLnJhbmRvbS5kZWZhdWx0X3JuZyhzZWVkKQogICAgZGF0ZXMgPSBwZC5iZGF0ZV9yYW5nZSgiMjAyMi0wMS0wMSIsIHBlcmlvZHM9bl9kYXlzKQogICAgbWFya2V0ID0gcm5nLm5vcm1hbCgwLjAwMDMsIDAuMDExLCBuX2RheXMpICAjIOaXpeaUtuebigogICAgYmFzZV92b2wgPSBybmcudW5pZm9ybSgwLjAwOCwgMC4wMjUsIG5fc3RvY2tzKQogICAgYmV0YSA9IHJuZy51bmlmb3JtKDAuNiwgMS40LCBuX3N0b2NrcykKICAgICMg6K6p5YmNIDEwIOWPquS6uuS4uuS9juazouWKqO+8iOS9juazouWboOWtkOWtmOWcqO+8iQogICAgYmFzZV92b2xbOjEwXSA9IHJuZy51bmlmb3JtKDAuMDA2LCAwLjAwOSwgMTApCiAgICBwcmljZXMgPSB7fQogICAgZm9yIGkgaW4gcmFuZ2Uobl9zdG9ja3MpOgogICAgICAgIGRhaWx5X3JldCA9IG1hcmtldCAqIGJldGFbaV0gKyBybmcubm9ybWFsKDAuMCwgYmFzZV92b2xbaV0sIG5fZGF5cykKICAgICAgICBwcmljZXNbZiJTe2k6MDJkfSJdID0gMTAwLjAgKiAoMS4wICsgZGFpbHlfcmV0KS5jdW1wcm9kKCkKICAgIHJldHVybiBwZC5EYXRhRnJhbWUocHJpY2VzLCBpbmRleD1kYXRlcykKCgpkZWYgbW9udGhseV9sb3d2b2xfcG9ydGZvbGlvKHJldHVybnM6IHBkLkRhdGFGcmFtZSwgazogaW50ID0gMTAsIGxvb2tiYWNrOiBpbnQgPSAyMSkgLT4gcGQuRGF0YUZyYW1lOgogICAgIiIi5q+P5pyI5pyr5oyJ6L+H5Y67IGxvb2tiYWNrIOaXpeazouWKqOeOh+mAieacgOS9jiBrIOWPqu+8jOetieadg+aMgeacieWIsOS4i+aciOacq+OAgiIiIgogICAgZGF0ZXMgPSByZXR1cm5zLmluZGV4CiAgICAjIOe7hOWQiOaXpeaUtuebiuW6j+WIlwogICAgcG9ydF9yZXQgPSBwZC5TZXJpZXMoMC4wLCBpbmRleD1kYXRlcykKICAgICMg5pyI5pyr5qCH6K6w77ya5Y+W5q+P5Liq5pyI55qE5pyA5ZCO5LiA5Liq5Lqk5piT5pel77yI5LmL5YmN55SoIGRyb3BfZHVwbGljYXRlcyDlrp7pmYXlj5bliLDnmoTmmK/mnIjliJ3vvIkKICAgIHMgPSBkYXRlcy50b19zZXJpZXMoKQogICAgbW9udGhfZW5kID0gcy5ncm91cGJ5KHMuZHQudG9fcGVyaW9kKCJNIikpLnRhaWwoMSkuaW5kZXgKICAgIGZvciBtX2VuZCBpbiBtb250aF9lbmQ6CiAgICAgICAgcG9zID0gZGF0ZXMuZ2V0X2xvYyhtX2VuZCkKICAgICAgICBzdGFydCA9IG1heCgwLCBwb3MgLSBsb29rYmFjayArIDEpCiAgICAgICAgd2luZG93ID0gcmV0dXJucy5pbG9jW3N0YXJ0IDogcG9zICsgMV0KICAgICAgICBpZiB3aW5kb3cuc2hhcGVbMF0gPCA1OgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIHZvbCA9IHdpbmRvdy5zdGQoKQogICAgICAgIGNob3NlbiA9IHZvbC5uc21hbGxlc3QoaykuaW5kZXgudG9saXN0KCkKICAgICAgICAjIOaMgeacieWMuumXtO+8muS4i+aciOacq+S5i+WJjQogICAgICAgIG54dCA9IHBvcyArIDEKICAgICAgICBpZiBueHQgPj0gbGVuKGRhdGVzKToKICAgICAgICAgICAgYnJlYWsKICAgICAgICAjIOaMgeacieiHs+S4i+S4gOS4quaciOacq++8iOaIluacn+acq++8iQogICAgICAgIG54dF9tb250aCA9IGRhdGVzW254dDpdLnRvX3NlcmllcygpLmR0LnRvX3BlcmlvZCgiTSIpLmRyb3BfZHVwbGljYXRlcygpLmluZGV4CiAgICAgICAgZW5kX3BvcyA9IGxlbihkYXRlcykgLSAxCiAgICAgICAgaWYgbGVuKG54dF9tb250aCkgPiAxOgogICAgICAgICAgICBlbmRfcG9zID0gZGF0ZXMuZ2V0X2xvYyhueHRfbW9udGhbMV0pIC0gMQogICAgICAgIGhvbGQgPSByZXR1cm5zLmxvY1tkYXRlc1tueHQgOiBlbmRfcG9zICsgMV0sIGNob3Nlbl0ubWVhbihheGlzPTEpCiAgICAgICAgcG9ydF9yZXQubG9jW2hvbGQuaW5kZXhdID0gaG9sZAogICAgcmV0dXJuIHBvcnRfcmV0CgoKZGVmIHBlcmYocG9ydF9yZXQ6IHBkLlNlcmllcykgLT4gZGljdDoKICAgIHJldCA9IHBvcnRfcmV0W3BvcnRfcmV0ICE9IDBdCiAgICBpZiByZXQuZW1wdHk6CiAgICAgICAgcmV0dXJuIHt9CiAgICBjdW0gPSAoMSArIHJldCkuY3VtcHJvZCgpCiAgICBuX3llYXJzID0gbGVuKHJldCkgLyAyNTIKICAgIGNhZ3IgPSBjdW0uaWxvY1stMV0gKiogKDEgLyBuX3llYXJzKSAtIDEgaWYgKG5feWVhcnMgPiAwIGFuZCBjdW0uaWxvY1stMV0gPiAwKSBlbHNlIDAuMAogICAgc2hhcnBlID0gcmV0Lm1lYW4oKSAvIHJldC5zdGQoKSAqIG5wLnNxcnQoMjUyKSBpZiByZXQuc3RkKCkgPiAwIGVsc2UgMAogICAgcGVhayA9IGN1bS5jdW1tYXgoKQogICAgbWRkID0gKChjdW0gLSBwZWFrKSAvIHBlYWspLm1pbigpCiAgICByZXR1cm4gewogICAgICAgICJuX2RheXMiOiBpbnQobGVuKHJldCkpLAogICAgICAgICJ0b3RhbF9yZXR1cm5fcGN0Ijogcm91bmQoZmxvYXQoY3VtLmlsb2NbLTFdIC0gMSkgKiAxMDAsIDIpLAogICAgICAgICJjYWdyX3BjdCI6IHJvdW5kKGZsb2F0KGNhZ3IpICogMTAwLCAyKSwKICAgICAgICAic2hhcnBlIjogcm91bmQoZmxvYXQoc2hhcnBlKSwgMiksCiAgICAgICAgIm1heF9kcmF3ZG93bl9wY3QiOiByb3VuZChmbG9hdChtZGQpICogMTAwLCAyKSwKICAgIH0KCgpkZWYgcnVuKG91dF9kaXI6IHN0ciA9ICIuIikgLT4gZGljdDoKICAgIG9zLm1ha2VkaXJzKG91dF9kaXIsIGV4aXN0X29rPVRydWUpCiAgICBwcmludCgiW2xvd3ZvbF0g55Sf5oiQ5ZCI5oiQ5pWw5o2uIC4uLiIpCiAgICBweCA9IGdlbmVyYXRlX3N5bnRoZXRpYygpCiAgICByZXQgPSBweC5wY3RfY2hhbmdlKCkuZHJvcG5hKCkKICAgIHByaW50KGYiW2xvd3ZvbF0ge3B4LnNoYXBlWzFdfSDlj6rogqHnpaggLyB7bGVuKHJldCl9IOS6pOaYk+aXpSIpCiAgICBwb3J0ID0gbW9udGhseV9sb3d2b2xfcG9ydGZvbGlvKHJldCwgaz0xMCkKICAgIHN0YXRzID0gcGVyZihwb3J0KQogICAgZXF1aXR5ID0gKDEgKyBwb3J0W3BvcnQgIT0gMF0pLmN1bXByb2QoKQogICAgZXFfcGF0aCA9IG9zLnBhdGguam9pbihvdXRfZGlyLCAibG93dm9sX2VxdWl0eS5jc3YiKQogICAgZXF1aXR5LnRvX2NzdihlcV9wYXRoLCBoZWFkZXI9WyJlcXVpdHkiXSkKICAgIHN1bW1fcGF0aCA9IG9zLnBhdGguam9pbihvdXRfZGlyLCAibG93dm9sX3N1bW1hcnkuanNvbiIpCiAgICB3aXRoIG9wZW4oc3VtbV9wYXRoLCAidyIsIGVuY29kaW5nPSJ1dGYtOCIpIGFzIGY6CiAgICAgICAganNvbi5kdW1wKHsic3RyYXRlZ3kiOiAibW9udGhseV9sb3d2b2wiLCAicGFyYW1zIjogeyJrIjogMTAsICJsb29rYmFjayI6IDIxfSwgInN0YXRzIjogc3RhdHN9LCBmLCBpbmRlbnQ9MikKICAgIHByaW50KGYiW2xvd3ZvbF0g5bm05YyWIHtzdGF0c1snY2Fncl9wY3QnXX0lIHwg5aSP5pmuIHtzdGF0c1snc2hhcnBlJ119IHwg5pyA5aSn5Zue5pKkIHtzdGF0c1snbWF4X2RyYXdkb3duX3BjdCddfSUiKQogICAgcmV0dXJuIHsic3RhdHMiOiBzdGF0cywgImVxdWl0eV9wYXRoIjogZXFfcGF0aCwgInN1bW1hcnlfcGF0aCI6IHN1bW1fcGF0aH0KCgpkZWYgbWFpbigpIC0+IE5vbmU6CiAgICBvdXQgPSBvcy5wYXRoLmpvaW4ob3MucGF0aC5kaXJuYW1lKG9zLnBhdGguZGlybmFtZShvcy5wYXRoLmFic3BhdGgoX19maWxlX18pKSksICJiYWNrdGVzdCIsICJvdXRwdXQiKQogICAgcnVuKG91dCkKCgppZiBfX25hbWVfXyA9PSAiX19tYWluX18iOgogICAgbWFpbigpCg==
+"""示例策略：月度低波选股（合成数据可跑版）。
+
+用合成价格序列演示"低波动因子"回测框架，无需网络：
+- 生成 N 只股票、T 天的价格（部分股票人为低波动），用 pct_change 还原日收益。
+- 每月末按过去 1 个月波动率排序，选最低的 K 只等权持有至下月末。
+- 输出 equity.csv 与 summary.json，含年化、夏普、最大回撤等组合指标。
+
+真实接入：把 `generate_synthetic` 换成从 data.store 读取真实日线，
+用 `adj_close` 计算收益率即可复用同一套组合逻辑。
+"""
+from __future__ import annotations
+
+import csv
+import json
+import os
+from datetime import datetime, timedelta
+
+import numpy as np
+import pandas as pd
+
+
+def generate_synthetic(n_stocks: int = 50, n_days: int = 756, seed: int = 42) -> pd.DataFrame:
+    """生成合成价格序列（起点 100）。
+
+    每只股票日收益 = 市场收益*beta + 个股正态噪声，价格按日收益复利得到。
+    这样下游可用 `pct_change()` 还原日收益，与 data.store 存 adj_close 的口径一致
+    （之前版本直接生成"收益"却又对其再 pct_change，导致指标失真）。
+    """
+    rng = np.random.default_rng(seed)
+    dates = pd.bdate_range("2022-01-01", periods=n_days)
+    market = rng.normal(0.0003, 0.011, n_days)  # 日收益
+    base_vol = rng.uniform(0.008, 0.025, n_stocks)
+    beta = rng.uniform(0.6, 1.4, n_stocks)
+    # 让前 10 只人为低波动（低波因子存在）
+    base_vol[:10] = rng.uniform(0.006, 0.009, 10)
+    prices = {}
+    for i in range(n_stocks):
+        daily_ret = market * beta[i] + rng.normal(0.0, base_vol[i], n_days)
+        prices[f"S{i:02d}"] = 100.0 * (1.0 + daily_ret).cumprod()
+    return pd.DataFrame(prices, index=dates)
+
+
+def monthly_lowvol_portfolio(returns: pd.DataFrame, k: int = 10, lookback: int = 21) -> pd.DataFrame:
+    """每月末按过去 lookback 日波动率选最低 k 只，等权持有到下月末。"""
+    dates = returns.index
+    # 组合日收益序列
+    port_ret = pd.Series(0.0, index=dates)
+    # 月末标记：取每个月的最后一个交易日（之前用 drop_duplicates 实际取到的是月初）
+    s = dates.to_series()
+    month_end = s.groupby(s.dt.to_period("M")).tail(1).index
+    for m_end in month_end:
+        pos = dates.get_loc(m_end)
+        start = max(0, pos - lookback + 1)
+        window = returns.iloc[start : pos + 1]
+        if window.shape[0] < 5:
+            continue
+        vol = window.std()
+        chosen = vol.nsmallest(k).index.tolist()
+        # 持有区间：下月末之前
+        nxt = pos + 1
+        if nxt >= len(dates):
+            break
+        # 持有至下一个月末（或期末）
+        nxt_month = dates[nxt:].to_series().dt.to_period("M").drop_duplicates().index
+        end_pos = len(dates) - 1
+        if len(nxt_month) > 1:
+            end_pos = dates.get_loc(nxt_month[1]) - 1
+        hold = returns.loc[dates[nxt : end_pos + 1], chosen].mean(axis=1)
+        port_ret.loc[hold.index] = hold
+    return port_ret
+
+
+def perf(port_ret: pd.Series) -> dict:
+    ret = port_ret[port_ret != 0]
+    if ret.empty:
+        return {}
+    cum = (1 + ret).cumprod()
+    n_years = len(ret) / 252
+    cagr = cum.iloc[-1] ** (1 / n_years) - 1 if (n_years > 0 and cum.iloc[-1] > 0) else 0.0
+    sharpe = ret.mean() / ret.std() * np.sqrt(252) if ret.std() > 0 else 0
+    peak = cum.cummax()
+    mdd = ((cum - peak) / peak).min()
+    return {
+        "n_days": int(len(ret)),
+        "total_return_pct": round(float(cum.iloc[-1] - 1) * 100, 2),
+        "cagr_pct": round(float(cagr) * 100, 2),
+        "sharpe": round(float(sharpe), 2),
+        "max_drawdown_pct": round(float(mdd) * 100, 2),
+    }
+
+
+def run(out_dir: str = ".") -> dict:
+    os.makedirs(out_dir, exist_ok=True)
+    print("[lowvol] 生成合成数据 ...")
+    px = generate_synthetic()
+    ret = px.pct_change().dropna()
+    print(f"[lowvol] {px.shape[1]} 只股票 / {len(ret)} 交易日")
+    port = monthly_lowvol_portfolio(ret, k=10)
+    stats = perf(port)
+    equity = (1 + port[port != 0]).cumprod()
+    eq_path = os.path.join(out_dir, "lowvol_equity.csv")
+    equity.to_csv(eq_path, header=["equity"])
+    summ_path = os.path.join(out_dir, "lowvol_summary.json")
+    with open(summ_path, "w", encoding="utf-8") as f:
+        json.dump({"strategy": "monthly_lowvol", "params": {"k": 10, "lookback": 21}, "stats": stats}, f, indent=2)
+    print(f"[lowvol] 年化 {stats['cagr_pct']}% | 夏普 {stats['sharpe']} | 最大回撤 {stats['max_drawdown_pct']}%")
+    return {"stats": stats, "equity_path": eq_path, "summary_path": summ_path}
+
+
+def main() -> None:
+    out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backtest", "output")
+    run(out)
+
+
+if __name__ == "__main__":
+    main()
