@@ -1,0 +1,18 @@
+# exporter Service：暴露 /metrics 给集群内 Prometheus 抓取。
+apiVersion: v1
+kind: Service
+metadata:
+  name: quant-exporter
+  namespace: quant
+  labels:
+    app: a-share-quant
+    component: exporter
+spec:
+  selector:
+    app: a-share-quant
+    component: exporter
+  ports:
+    - name: metrics
+      port: 8000
+      targetPort: metrics
+  type: ClusterIP

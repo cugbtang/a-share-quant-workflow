@@ -1,0 +1,15 @@
+# 共享存储：CronJob（写）与 exporter（读）通过它传递 state 文件。
+# 默认 ReadWriteOnce（单节点）。若 CronJob 与 exporter 需跨节点，
+# 请改用 ReadWriteMany 的 StorageClass（如 NFS / 云厂商 EFS/CFS）。
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: quant-data
+  namespace: quant
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  # storageClassName: <按需修改为你集群可用的 StorageClass>
