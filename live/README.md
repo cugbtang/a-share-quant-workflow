@@ -19,10 +19,14 @@ python live/qmt_order.py
 ```
 > 默认 `main()` 不会实际下单（已注释 `buy/sell`）。接入真实信号与风控后再打开。
 
-生产环境还需补齐（本骨架未含，需自行实现）：
-- 风控：单票仓位上限、当日亏损熔断、黑名单。
-- 信号接入：来自 `backtest/` 的选股结果或实时策略输出。
-- 报单状态跟踪与撤单逻辑。
+生产环境仍需补齐（本骨架未含，需自行实现）：
+- 信号接入：来自 `backtest/` 的选股结果或实时策略输出（接好后在 `main()` 中调用 `client.buy/sell`）。
+- 报单状态跟踪：轮询 `query_orders()` 做成交/撤单闭环（撤单接口 `cancel_order` 已就绪）。
+
+已接入（见 `qmt_order.py`）：
+- 风控 `RiskController`：单票仓位上限（金额 + 占比）、单笔委托上限、当日亏损熔断、黑名单。
+  `buy/sell` 前强制 `pre_trade` 校验，不通过则不下单。单测见 `tests/test_risk_controller.py`。
+- 撤单：`cancel_order(order_id)` 兼容不同 `xtquant` 版本取消接口。
 
 ## 2. 监控：`monitor/` + `docker-compose.yml`
 
