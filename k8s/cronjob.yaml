@@ -1,0 +1,55 @@
+# 跑批管道 CronJob：工作日收盘后执行回测/事件研究，并把结果写入
+# 共享 PVC（/data/quant_state.json），供 exporter 读取、Prometheus 抓取。
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: quant-pipeline
+  namespace: quant
+  labels:
+    app: a-share-quant
+    component: pipeline
+spec:
+  schedule: "30 16 * * 1-5"   # 工作日 16:30（收盘后）跑批（UTC，按集群时区调整）
+  concurrencyPolicy: Forbid      # 上一次未结束则不重开
+  startingDeadlineSeconds: 300
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      activeDeadlineSeconds: 3600
+      template:
+        metadata:
+          labels:
+            app: a-share-quant
+            component: pipeline
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: pipeline
+              image: ghcr.io/cugbtang/a-share-quant-workflow:latest
+              imagePullPolicy: IfNotPresent
+              command: ["/bin/bash", "-lc", "bash /app/k8s/run_pipeline.sh"]
+              env:
+                - name: METRICS_STATE_FILE
+                  value: /data/quant_state.json
+                - name: WESTOCK_BIN
+                  valueFrom:
+                    secretKeyRef:
+                      name: quant-secrets
+                      key: westock-bin
+                      optional: true
+              volumeMounts:
+                - name: data
+                  mountPath: /data
+              resources:
+                requests:
+                  cpu: "250m"
+                  memory: "512Mi"
+                limits:
+                  cpu: "1"
+                  memory: "1Gi"
+          volumes:
+            - name: data
+              persistentVolumeClaim:
+                claimName: quant-data

@@ -1,0 +1,61 @@
+# 监控导出器 Deployment：常驻运行 live/metrics_exporter.py，
+# 从共享 PVC 读取 state 文件并暴露 /metrics，供 Prometheus 抓取。
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quant-exporter
+  namespace: quant
+  labels:
+    app: a-share-quant
+    component: exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: a-share-quant
+      component: exporter
+  template:
+    metadata:
+      labels:
+        app: a-share-quant
+        component: exporter
+    spec:
+      containers:
+        - name: exporter
+          image: ghcr.io/cugbtang/a-share-quant-workflow:latest
+          imagePullPolicy: IfNotPresent
+          command: ["python", "/app/live/metrics_exporter.py"]
+          ports:
+            - name: metrics
+              containerPort: 8000
+          env:
+            - name: METRICS_STATE_FILE
+              value: /data/quant_state.json
+            - name: METRICS_PORT
+              value: "8000"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "128Mi"
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
+          readinessProbe:
+            httpGet:
+              path: /metrics
+              port: metrics
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /metrics
+              port: metrics
+            initialDelaySeconds: 10
+            periodSeconds: 30
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: quant-data
